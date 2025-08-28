@@ -39,13 +39,13 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/how-rental-companies-work">
-                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100 shadow-lg" data-testid="cta-start-guide">
+                  <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary shadow-lg" data-testid="cta-start-guide">
                     <BookOpen className="mr-2 h-5 w-5" />
                     Start Your Guide
                   </Button>
                 </Link>
                 <Link href="/pricing-budgeting">
-                  <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary shadow-lg" data-testid="cta-see-prices">
+                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100 shadow-lg" data-testid="cta-see-prices">
                     <DollarSign className="mr-2 h-5 w-5" />
                     See Local Prices
                   </Button>
