@@ -204,7 +204,7 @@ export default function HomePage() {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Planning Tools & Checklists</h3>
                 <p className="text-muted-foreground mb-4">
-                  Interactive charts, downloadable checklists, and calculators to help you plan the 
+                  Sizing charts, downloadable checklists, and delivery guides to help you plan the 
                   perfect event with the right equipment.
                 </p>
                 <Link href="/planning-tools" className="text-primary font-medium hover:underline inline-flex items-center">

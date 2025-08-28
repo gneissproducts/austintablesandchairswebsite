@@ -184,6 +184,22 @@ export const faqData = [
   {
     question: "How do delivery zones affect pricing?",
     answer: "Most companies include free delivery within a certain radius (usually 15-25 miles from their location). Beyond that, expect delivery charges of $2-5 per mile. Some companies charge flat zone rates. Urban Austin deliveries may include additional city fees or parking permits."
+  },
+  {
+    question: "What's the difference between tent types?",
+    answer: "Frame tents are most common and work on any surface - grass, concrete, or decks. Pole tents are more elegant but require grass for staking. Clear-top tents offer views of the sky but cost more. White tents are classic and reflect heat well in Austin summers, while clear-sided options provide better views but less weather protection."
+  },
+  {
+    question: "How should I choose between round and rectangular tables?",
+    answer: "Round tables encourage conversation and work well for social events like weddings. Rectangular tables are better for presentations, buffet lines, and maximizing seating in tight spaces. Most events use 60-inch round tables (seats 8) or 8-foot rectangular tables (seats 8-10). Consider your venue layout and event style when deciding."
+  },
+  {
+    question: "Do I need permits for my event?",
+    answer: "Permit requirements depend on your location, event size, and tent setup. Austin city events may require special event permits for large gatherings. Tent installations often need permits for structures over certain sizes. Your rental company can usually advise on common requirements, but check with your local municipality for specific rules."
+  },
+  {
+    question: "What should I do if rental items don't arrive or are wrong?",
+    answer: "Reputable companies have backup plans for equipment issues. Contact your rental company immediately if items are missing or incorrect. Most have emergency inventory and will work to resolve issues quickly. This is why it's important to choose established companies with good reputations and emergency protocols."
   }
 ];
 
