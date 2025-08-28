@@ -1,0 +1,202 @@
+Build a modern, professional static website for AustinTablesAndChairs.com, hosted on Cloudflare Pages free tier. The site is an unbiased renter’s guide to event rentals in the Austin, Texas area. Its purpose is to help people understand the event rental process, what’s fair to pay, how to compare companies, and what equipment they might need — without sales pitches.
+The design should look like it was created in 2025: clean, modern, mobile-friendly, with a professional but welcoming feel (similar to Wirecutter or Consumer Reports in tone).
+The website must prioritize E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness). Make it clear that all recommendations are unbiased and unsponsored.
+Technical Requirements
+Must be a static site (no databases).
+
+
+Should use a framework that works with Cloudflare Pages (Astro, Hugo, or Next.js in static export mode).
+
+
+Content sections should be easy to expand later (blog posts, guides, etc.), ideally in Markdown or MDX.
+
+
+The website should be highly optimized for SEO.  This is the 1 priority.  Include basic SEO optimization (semantic HTML, descriptive meta tags, headings, alt text) plus add any other more advanced SEO techniques that can help the website gain a high SEO rating.
+
+
+Use structured data schema (FAQ schema, How-To schema) where applicable.
+
+
+
+Homepage
+Hero section (visitor-focused)
+ Headline: “Planning an event in Austin? Get unbiased, expert advice on renting tables, chairs, tents, and more — so you know exactly what to expect, what’s fair to pay, and how to avoid surprises.”
+ Sub-headline: “From contracts to delivery to pricing, we break down everything you need to know about working with local event rental companies — without the sales pitch.”
+ CTA Buttons: Start Your Guide | See Local Prices
+
+
+Intro section: Short explanation of the site’s mission and why it’s unbiased.
+“What this site is” → unbiased, not sponsored.
+
+
+“Who it’s for” → Austin-area event hosts, planners, and anyone renting for weddings, parties, or corporate events.
+
+
+Preview cards for each main section (featured sections):
+
+
+How Rental Companies Work
+
+
+Pricing & Budgeting
+
+
+Equipment & Options
+
+
+Local Resources
+
+
+Planning Tools & Checklists
+
+
+Blog
+
+
+
+Core Sections (each has its own landing page with at least 2 placeholder articles/posts)
+How Rental Companies Work
+
+
+Site visits & consultations
+
+
+Contracts, deposits, and cancellation policies
+
+
+Delivery & setup (what’s included vs extra)
+
+
+Insurance & liability (damage, weather, safety)
+
+
+Equipment quality & cleanliness
+
+
+Customer service (what matters, red flags to watch for)
+
+
+Pricing & Budgeting
+
+
+Common pricing ranges in Austin (tables, chairs, tents, fans, etc.)
+
+
+How to compare quotes (what’s included vs add-ons)
+
+
+Hidden fees to watch for (delivery zones, weekend pickups, fuel surcharges)
+
+
+Example budgets (wedding for 100 guests, backyard party, corporate event)
+
+
+Equipment & Options
+
+
+Tables & seating arrangements (layouts, guest counts)
+
+
+Chair types & pricing
+
+
+Tent & canopy guide (what size for how many people, weather considerations)
+
+
+Climate control (fans, heaters, coolers)
+
+
+“Event essentials” (waste disposal, staging, dance floors, linens, lighting)
+
+
+Local Resources
+
+
+List of reputable Austin rental companies (unbiased overview)
+
+
+Venue considerations (which venues allow outside rentals, which have restrictions)
+
+
+Austin-specific tips (summer heat, storm risks, noise ordinances, delivery logistics in the city)
+
+
+Planning Tools & Checklists (MUST-HAVE section)
+
+
+“[How many/what size] [rental item] do I need for [guest ranges]?” charts:
+Table & chair quantity chart.
+Tent size chart.
+Dance floor size chart.
+
+
+“Event Rental Checklist” interactive list (with downloadable event rental checklist (PDF)).
+
+
+Delivery: Dat: What to Expect” (step-by-step guide)
+
+
+FAQ page (“Do I need insurance?” “What happens if items are damaged?”)
+Blog
+
+
+Space for seasonal guides, deep dives, and SEO-targeted articles.
+Seasonal guides (“Hosting a Summer Event in Austin: What You’ll Need”)
+
+
+Cost breakdowns
+
+
+Mistakes to avoid when renting
+
+
+How to size things for your guest list
+
+
+Brand/product comparisons (educational, not sponsored)
+
+
+
+Supporting Pages
+About Us: Why the site exists, emphasis on unbiased advice.
+
+
+Contact / Suggest a Topic: Simple email form.
+
+
+Disclaimer: Clear statement that info is advisory only.
+
+
+
+Content Placeholder Requirement
+For every section that will eventually hold multiple articles/posts, include at least 2 “best guess” sample articles. This way, the browsing experience looks real.
+
+Style Guide
+Clean, grid-based layout.
+
+
+Rounded corners, soft shadows, modern typography.
+
+
+Clear navigation bar with dropdown menus if needed.
+
+
+Responsive design (mobile-first).
+
+
+Blog/articles should display as cards with images and summaries.
+
+
+The website should be “media-rich” (so make sure photos are presented with as much importance as the accompanying text).
+
+
+
+Extra Notes
+Site must feel like an authoritative guide, not a rental company’s ad.  This website will act as the “Austin Event Rental Handbook”.
+
+
+Use professional but approachable tone.
+
+
+Callouts and tip boxes should be styled for scannability.
+
