@@ -45,7 +45,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/pricing-budgeting">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary shadow-lg" data-testid="cta-see-prices">
+                  <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary shadow-lg" data-testid="cta-see-prices">
                     <DollarSign className="mr-2 h-5 w-5" />
                     See Local Prices
                   </Button>
@@ -291,7 +291,7 @@ export default function HomePage() {
               </Button>
             </Link>
             <Link href="/planning-tools">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary" data-testid="cta-download-checklists">
+              <Button variant="secondary" size="lg" data-testid="cta-download-checklists">
                 Download Checklists
               </Button>
             </Link>
