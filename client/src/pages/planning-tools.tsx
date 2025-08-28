@@ -1,13 +1,48 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SEOHead from "@/components/seo/seo-head";
 import { HowToStructuredData } from "@/components/ui/structured-data";
 import { pageSEO } from "@/lib/seo-data";
 import { planningToolsData } from "@/lib/content-data";
-import { Users, Home, Music, Download, CheckCircle } from "lucide-react";
+import { Users, Home, Music, Download, Calculator, CheckCircle } from "lucide-react";
 
 export default function PlanningTools() {
+  const [guestCount, setGuestCount] = useState<number>(100);
+  const [eventType, setEventType] = useState<string>("seated");
+
+  const calculateTables = (guests: number, type: string) => {
+    if (type === "cocktail") {
+      return Math.ceil(guests / 8); // 8 guests per cocktail table
+    }
+    return Math.ceil(guests / 8); // 8 guests per 60" round table
+  };
+
+  const calculateTentSize = (guests: number, type: string) => {
+    const sqftPerPerson = type === "cocktail" ? 8 : type === "seated" ? 12 : 16; // with dance floor
+    const totalSqft = guests * sqftPerPerson;
+    
+    if (totalSqft <= 400) return "20×20";
+    if (totalSqft <= 600) return "20×30";
+    if (totalSqft <= 800) return "20×40";
+    if (totalSqft <= 1200) return "30×40";
+    if (totalSqft <= 2400) return "40×60";
+    return "40×80+";
+  };
+
+  const calculateDanceFloor = (guests: number) => {
+    const dancers = Math.ceil(guests * 0.35); // 35% dancing at once
+    const sqft = dancers * 4.5; // 4.5 sqft per dancer
+    
+    if (sqft <= 144) return "12×12";
+    if (sqft <= 225) return "15×15";
+    if (sqft <= 324) return "18×18";
+    if (sqft <= 400) return "20×20";
+    return "24×24";
+  };
 
   const deliverySteps = [
     {
@@ -77,7 +112,7 @@ export default function PlanningTools() {
           
           <div className="max-w-3xl">
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Take the guesswork out of event planning with our comprehensive sizing charts 
+              Take the guesswork out of event planning with our comprehensive calculators, sizing charts, 
               and checklists. These tools help you determine exactly what you need and keep your planning 
               process organized from start to finish.
             </p>
@@ -85,12 +120,108 @@ export default function PlanningTools() {
         </div>
 
         {/* Planning Tools Tabs */}
-        <Tabs defaultValue="charts" className="mb-16">
-          <TabsList className="grid w-full grid-cols-3" data-testid="planning-tools-tabs">
+        <Tabs defaultValue="calculator" className="mb-16">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4" data-testid="planning-tools-tabs">
+            <TabsTrigger value="calculator" data-testid="tab-calculator">Calculator</TabsTrigger>
             <TabsTrigger value="charts" data-testid="tab-charts">Size Charts</TabsTrigger>
             <TabsTrigger value="checklist" data-testid="tab-checklist">Checklist</TabsTrigger>
             <TabsTrigger value="delivery" data-testid="tab-delivery">Delivery Guide</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="calculator" className="mt-8">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Calculator Input */}
+              <Card className="p-6">
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Calculator className="mr-2 h-5 w-5" />
+                    Event Calculator
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Number of Guests</label>
+                    <Input
+                      type="number"
+                      value={guestCount}
+                      onChange={(e) => setGuestCount(Number(e.target.value))}
+                      className="text-lg"
+                      data-testid="guest-count-input"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Event Style</label>
+                    <div className="space-y-2">
+                      {[
+                        { value: "cocktail", label: "Cocktail Reception" },
+                        { value: "seated", label: "Seated Dinner" },
+                        { value: "dance", label: "Dinner + Dancing" }
+                      ].map((option) => (
+                        <label key={option.value} className="flex items-center space-x-2">
+                          <input
+                            type="radio"
+                            value={option.value}
+                            checked={eventType === option.value}
+                            onChange={(e) => setEventType(e.target.value)}
+                            data-testid={`event-type-${option.value}`}
+                          />
+                          <span>{option.label}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Calculator Results */}
+              <Card className="p-6">
+                <CardHeader>
+                  <CardTitle>Your Equipment Needs</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 bg-muted rounded-lg">
+                      <Users className="h-6 w-6 mx-auto mb-2 text-primary" />
+                      <div className="text-2xl font-bold" data-testid="calculated-tables">
+                        {calculateTables(guestCount, eventType)}
+                      </div>
+                      <div className="text-sm text-muted-foreground">Tables (60")</div>
+                    </div>
+                    <div className="text-center p-4 bg-muted rounded-lg">
+                      <Users className="h-6 w-6 mx-auto mb-2 text-primary" />
+                      <div className="text-2xl font-bold" data-testid="calculated-chairs">
+                        {guestCount}
+                      </div>
+                      <div className="text-sm text-muted-foreground">Chairs</div>
+                    </div>
+                    <div className="text-center p-4 bg-muted rounded-lg">
+                      <Home className="h-6 w-6 mx-auto mb-2 text-primary" />
+                      <div className="text-2xl font-bold" data-testid="calculated-tent">
+                        {calculateTentSize(guestCount, eventType)}
+                      </div>
+                      <div className="text-sm text-muted-foreground">Tent Size</div>
+                    </div>
+                    <div className="text-center p-4 bg-muted rounded-lg">
+                      <Music className="h-6 w-6 mx-auto mb-2 text-primary" />
+                      <div className="text-2xl font-bold" data-testid="calculated-dance-floor">
+                        {calculateDanceFloor(guestCount)}
+                      </div>
+                      <div className="text-sm text-muted-foreground">Dance Floor</div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                    <h4 className="font-semibold mb-2">Austin Weather Considerations:</h4>
+                    <ul className="text-sm space-y-1">
+                      <li>• Add misting fans for summer events (June-August)</li>
+                      <li>• Consider sidewalls for spring/fall weather protection</li>
+                      <li>• White tents reflect heat better in Austin summers</li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
 
           <TabsContent value="charts" className="mt-8">
             <div className="space-y-12">
